@@ -54,100 +54,100 @@
             </div>
         </section>
 
-        <section id="job-application" class="section-padding">
-            <div class="container">
+        ¡Absolutamente! Aquí tienes el código HTML completo y recomendado para la sección "Trabajá con Nosotros" (#trabaja-con-nosotros), incluyendo el formulario con todos los atributos de Netlify configurados correctamente para recibir el currículum.
 
-                <div class="job-application-grid">
-                    
-                    <div class="job-info" data-aos="fade-right">
-                        <h3>¿Por qué elegir Gamadel S.A.?</h3>
-                        <p>Somos una empresa familiar con más de 20 años en el sector, enfocada en la innovación y el desarrollo profesional de nuestra gente.</p>
-                        
-                        <ul class="check-list">
-                            <li><i class="fas fa-check"></i> Ambiente de trabajo colaborativo.</li>
-                            <li><i class="fas fa-check"></i> Formación y capacitación constante.</li>
-                            <li><i class="fas fa-check"></i> Fuerte compromiso con la seguridad y la sustentabilidad.</li>
-                            <li><i class="fas fa-check"></i> Oportunidades de crecimiento interno.</li>
-                        </ul>
+📄 Código HTML Completo de la Sección de Postulación
+Asegúrate de reemplazar el contenido de tu etiqueta <section id="trabaja-con-nosotros"> con este bloque.
 
-                        <div class="legal-notice">
-                            <p>Tu postulación será evaluada por nuestro equipo de RR. HH. y conservada en nuestra base de datos para futuras oportunidades.</p>
-                        </div>
-                    </div>
+HTML
 
-                    <div class="form-upload-container" data-aos="fade-left">
-                        <h3>Formulario de Postulación</h3>
-                        
-                        <div id="job-success-message" style="display:none; text-align:center; padding: 40px; border: 2px solid var(--color-secondary); border-radius: 8px; background-color: #e6f7d9;">
-                            <i class="fas fa-check-circle icon-large" style="color: var(--color-secondary); margin-bottom: 20px;"></i>
-                            <h2>¡Postulación Enviada con Éxito!</h2>
-                            <p>Muchas gracias por tu interés en Gamadel S.A. Tu currículum ha sido recibido y será revisado por nuestro equipo de Recursos Humanos.</p>
-                            <p>Si tu perfil coincide con nuestras búsquedas actuales, nos pondremos en contacto a la brevedad.</p>
-                        </div>
-
-                        <form 
-                            id="job-form" 
-                            action="assets/procesar_cv.php" 
-                            method="POST" 
-                            enctype="multipart/form-data" 
-                            style="display: block;"
-                        >
-
-                            <div style="display:none;">
-                                <label for="spam_check">No rellene este campo:</label>
-                                <input type="text" name="spam_check" id="spam_check">
-                            </div>
-                            
-                            <div class="form-group-grid">
-                                
-                                <div class="form-group">
-                                    <label for="nombre">Nombre y Apellido *</label>
-                                    <input type="text" id="nombre" name="nombre" required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="ciudad">Ciudad / Provincia *</label>
-                                    <input type="text" id="ciudad" name="ciudad" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="telefono">Teléfono *</label>
-                                    <input type="tel" id="telefono" name="telefono" required>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="email">Correo Electrónico *</label>
-                                    <input type="email" id="email" name="email" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="motivacion">Comentanos sobre tu motivación o área de interés:</label>
-                                <textarea id="motivacion" name="motivacion" rows="4"></textarea>
-                            </div>
-                            
-                            <div class="file-upload-group">
-                                <label for="cv-file">Adjuntar Curriculum Vitae *</label>
-                                <input type="file" id="cv-file" name="cv_file" accept=".pdf,.doc,.docx" required>
-                                <span class="file-instructions">Formatos permitidos: PDF, DOC o DOCX. Máx. 5MB.</span>
-                            </div>
-
-                            <div class="legal-notice-group">
-                                <div class="recaptcha-placeholder">
-                                    <input type="checkbox" id="legal-check" name="legal-check" required>
-                                    <label for="legal-check">Acepto el aviso legal y la política de privacidad *</label>
-                                </div>
-                                <p class="legal-notice">Los datos ingresados y el CV serán utilizados únicamente con fines de selección de personal y se mantendrán bajo estricta confidencialidad conforme a la Ley de Protección de Datos Personales.</p>
-                            </div>
-
-                            <button type="submit" class="btn btn-primary btn-full-width">Enviar Postulación</button>
-                        </form>
-                    </div>
-
-                </div>
-
+<section id="trabaja-con-nosotros" class="section-padding bg-light">
+    <div class="container">
+        <h2>Únete a Nuestro Equipo</h2>
+        <p class="section-subtitle">
+            En Gamadel buscamos talento comprometido con la calidad y la excelencia. Completa el siguiente formulario para enviarnos tu postulación.
+        </p>
+        
+        <div class="job-application-grid">
+            
+            <div class="job-info">
+                <h3>Lo que ofrecemos</h3>
+                <p class="lead-text">
+                    Te invitamos a formar parte de una empresa en crecimiento, líder en el sector, donde valoramos el desarrollo profesional y personal.
+                </p>
+                <ul class="check-list">
+                    <li><i class="fas fa-check-circle"></i> Capacitación constante y planes de carrera.</li>
+                    <li><i class="fas fa-check-circle"></i> Excelente ambiente laboral y trabajo en equipo.</li>
+                    <li><i class="fas fa-check-circle"></i> Salarios competitivos y beneficios adicionales.</li>
+                    <li><i class="fas fa-check-circle"></i> Oportunidad de participar en proyectos innovadores.</li>
+                </ul>
             </div>
-        </section>
+            
+            <div class="form-upload-container">
+                <h3>Datos de Postulación</h3>
+                
+                <form 
+                    id="application-form" 
+                    method="POST" 
+                    name="trabaja_con_nosotros" 
+                    data-netlify="true" 
+                    enctype="multipart/form-data" 
+                    netlify
+                >
+                    <div class="form-group-grid">
+                        
+                        <div class="form-group">
+                            <label for="nombre">Nombre y Apellido</label>
+                            <input type="text" name="nombre" id="nombre" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" name="telefono" id="telefono">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="puesto">Puesto Aplicado</label>
+                            <input type="text" name="puesto" id="puesto" placeholder="Ej: Operario de Depósito / Administrador">
+                        </div>
+                        
+                    </div>
+
+                    <div class="file-upload-group">
+                        <label for="cv-file">Subir Currículum Vitae (CV)</label>
+                        <input type="file" name="Curriculum" id="cv-file" accept=".pdf, .doc, .docx" required>
+                        <span class="file-instructions">Formatos permitidos: PDF, DOCX (máx 5MB recomendado).</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje o Comentarios (Opcional)</label>
+                        <textarea name="mensaje" id="mensaje" rows="4"></textarea>
+                    </div>
+
+                    <div class="legal-notice-group">
+                        <div class="recaptcha-placeholder">
+                            <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
+                            <label for="privacy-policy">Acepto la política de privacidad y tratamiento de datos.</label>
+                        </div>
+                        <p class="legal-notice">
+                            Sus datos serán tratados con fines exclusivos de selección de personal y no serán compartidos con terceros sin su consentimiento.
+                        </p>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full-width">
+                        Enviar Postulación
+                    </button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+    </section>
     </main>
     
 
