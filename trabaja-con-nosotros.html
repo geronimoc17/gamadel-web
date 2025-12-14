@@ -86,63 +86,25 @@ HTML
             <div class="form-upload-container">
                 <h3>Datos de Postulación</h3>
                 
-                <form 
-                    id="application-form" 
-                    method="POST" 
-                    name="trabaja_con_nosotros" 
-                    data-netlify="true" 
-                    enctype="multipart/form-data" 
-                    netlify
-                >
-                    <div class="form-group-grid">
-                        
-                        <div class="form-group">
-                            <label for="nombre">Nombre y Apellido</label>
-                            <input type="text" name="nombre" id="nombre" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Correo Electrónico</label>
-                            <input type="email" name="email" id="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="telefono">Teléfono</label>
-                            <input type="tel" name="telefono" id="telefono">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="puesto">Puesto Aplicado</label>
-                            <input type="text" name="puesto" id="puesto" placeholder="Ej: Operario de Depósito / Administrador">
-                        </div>
-                        
-                    </div>
+               <form 
+                id="application-form" 
+                method="POST" 
+                name="trabaja_con_nosotros" 
+                data-netlify="true" 
+                enctype="multipart/form-data" 
+                netlify>
+                <input type="hidden" name="_next" value="/gracias" />
+                
+                <div class="file-upload-group">
+                    <label for="cv-file">Subir Currículum Vitae (CV)</label>
+                    <input type="file" name="Curriculum" id="cv-file" accept=".pdf, .doc, .docx" required>
+                    <span class="file-instructions">Formatos permitidos: PDF, DOCX (máx 5MB recomendado).</span>
+                </div>
 
-                    <div class="file-upload-group">
-                        <label for="cv-file">Subir mi Currículum Vitae (CV)</label>
-                        <input type="file" name="Curriculum" id="cv-file" accept=".pdf, .doc, .docx" required>
-                        <span class="file-instructions">Formatos permitidos: PDF, DOCX (máx 5MB recomendado).</span>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje o Comentarios (Opcional)</label>
-                        <textarea name="mensaje" id="mensaje" rows="4"></textarea>
-                    </div>
-
-                    <div class="legal-notice-group">
-                        <div class="recaptcha-placeholder">
-                            <input type="checkbox" id="privacy-policy" name="privacy-policy" required>
-                            <label for="privacy-policy">Acepto la política de privacidad y tratamiento de datos.</label>
-                        </div>
-                        <p class="legal-notice">
-                            Sus datos serán tratados con fines exclusivos de selección de personal y no serán compartidos con terceros sin su consentimiento.
-                        </p>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary btn-full-width">
-                        Enviar Postulación
-                    </button>
-                </form>
+                <button type="submit" class="btn btn-primary btn-full-width">
+                    Enviar Postulación
+                </button>
+            </form>
             </div>
             
         </div>
