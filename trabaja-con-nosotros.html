@@ -86,13 +86,13 @@ HTML
             <div class="form-upload-container">
                 <h3>Datos de Postulación</h3>
                 
-               <form 
+                        <form 
                 id="application-form" 
                 method="POST" 
                 name="trabaja_con_nosotros" 
-                data-netlify="true" 
                 enctype="multipart/form-data" 
-                netlify>
+                action="/gracias" 
+                action="/gracias" >
                 <input type="hidden" name="_next" value="/gracias" />
                 
                 <div class="file-upload-group">
@@ -101,10 +101,7 @@ HTML
                     <span class="file-instructions">Formatos permitidos: PDF, DOCX (máx 5MB recomendado).</span>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-full-width">
-                    Enviar Postulación
-                </button>
-            </form>
+                </form>
             </div>
             
         </div>
@@ -129,5 +126,14 @@ HTML
         AOS.init({ duration: 800, once: true });
     </script>
     <script src="assets/js/main.js"></script>
+
+    <form name="trabaja_con_nosotros" netlify netlify-honeypot="bot-field" hidden>
+    <input name="nombre" type="text" />
+    <input name="email" type="email" />
+    <input name="telefono" type="tel" />
+    <input name="puesto" type="text" />
+    <input name="mensaje" type="text" />
+    <input name="Curriculum" type="file" />
+</form>
 </body>
 </html>
