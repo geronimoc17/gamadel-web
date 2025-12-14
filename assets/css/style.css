@@ -932,7 +932,7 @@ h2 {
 }
 
 /* ---------------------------------------------------- */
-/* 11. PÁGINA SUSTENTABILIDAD */
+/* 11. PÁGINA SUSTENTABILIDAD (Ajuste 2x2) */
 /* ---------------------------------------------------- */
 
 .icon-large-green {
@@ -943,11 +943,11 @@ h2 {
 
 /* --- Pilares Grid --- */
 .pilares-grid {
-    display: flex;
-    justify-content: center;
+    display: grid; 
+    grid-template-columns: 1fr; /* Una columna por defecto (móvil) */
     gap: 30px;
-    flex-wrap: wrap;
     padding-top: 30px;
+    justify-content: center; 
 }
 
 .pilar-card {
@@ -956,9 +956,6 @@ h2 {
     background-color: var(--color-white);
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    flex: 1;
-    min-width: 280px;
-    max-width: 350px;
     border-bottom: 5px solid var(--color-primary); 
     transition: transform 0.3s;
 }
@@ -972,6 +969,16 @@ h2 {
     color: var(--color-text);
     font-size: 1.5em;
     margin-top: 0;
+}
+
+/* Ajuste 2x2 para escritorio */
+@media (min-width: 769px) {
+    .pilares-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        max-width: 700px; /* Limitar el ancho para un buen agrupamiento central */
+        margin: 0 auto;
+        margin-top: 30px; 
+    }
 }
 
 
@@ -1437,13 +1444,8 @@ h2 {
         max-width: 100%;
     }
 
-    /* Responsive para Sustentabilidad */
-    .pilares-grid {
-        flex-direction: column;
-    }
-    .pilar-card {
-        max-width: 100%;
-    }
+    /* Responsive para Sustentabilidad (Gestionado por grid-template-columns: 1fr) */
+    /* No se requiere ajuste aquí */
     
     /* ------------------------------------------------ */
     /* *** SOLUCIÓN CRÍTICA: CONTACTO Y MAPA *** */
@@ -1522,6 +1524,4 @@ h2 {
     .clients-grid {
         grid-template-columns: repeat(2, 1fr); 
     }
-    
-    /* El ajuste de WhatsApp ya está en 768px y es suficiente */
 }
