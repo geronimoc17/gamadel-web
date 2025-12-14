@@ -9,16 +9,16 @@
 
 :root {
     /* Paleta de colores Corporativos (Gamadel) */
-    --color-primary: #DF4223;       /* NARANJA (Principal) */
+    --color-primary: #DF4223; 	    /* NARANJA (Principal) */
     --color-primary-dark: #c7391f; /* NARANJA OSCURO (Hover) */
-    --color-secondary: #1E1C21;     /* GRIS OSCURO (Títulos) */
-    --color-text: #272427;         /* GRIS (Cuerpo de texto) */
-    --color-light-bg: #f5f5f5;      /* Fondo claro */
+    --color-secondary: #1E1C21; 	    /* GRIS OSCURO (Títulos) */
+    --color-text: #272427; 	 	    /* GRIS (Cuerpo de texto) */
+    --color-light-bg: #f5f5f5; 	    /* Fondo claro */
     --color-white: #ffffff;
     
     /* Fuentes principales */
     --font-heading: 'Montserrat', sans-serif; 
-    --font-sans: 'Roboto', sans-serif;       
+    --font-sans: 'Roboto', sans-serif; 	 	 
 }
 
 html {
@@ -29,7 +29,7 @@ body {
     font-family: var(--font-sans); 
     color: var(--color-text);
     line-height: 1.6;
-    /* Ajuste de padding para compensar la altura fija del header */
+    /* AJUSTE RESPONSIVE: Este padding es para escritorio. Se corrige en móvil */
     padding-top: 80px !important; 
     background-color: var(--color-white);
 }
@@ -40,67 +40,41 @@ body {
     padding: 0 20px;
 }
 
-/* --- Estilos de Botones ESTÉTICA PROFESIONAL --- */
-/* Estilo base para todos los botones */
-.btn {
-    display: inline-block;
-    padding: 12px 25px; /* Ajuste del padding para hacerlo más sustancial */
-    font-size: 1em;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    border-radius: 6px; /* Esquinas ligeramente redondeadas */
-    transition: all 0.3s ease; /* Transición suave para todos los estados */
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para darle profundidad */
-}
+/* --- Estilos de Botones --- */
 
 /* *** ESTILO BOTÓN PRIMARIO (Naranja, Texto Blanco, Hover Oscuro) *** */
 .btn-primary {
-    /* Naranja por defecto */
     background-color: var(--color-primary) !important; 
-    /* Texto en blanco */
     color: var(--color-white) !important;
     border: 2px solid var(--color-primary);
 }
 
 .btn-primary:hover {
-    /* Naranja un poco más oscuro al pasar el cursor */
     background-color: var(--color-primary-dark) !important; 
-    /* Mantenemos el texto blanco */
     color: var(--color-white) !important; 
     border-color: var(--color-primary-dark);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
-    transform: translateY(-2px); /* Ligero desplazamiento hacia arriba */
 }
 
-/* Estilos de Botones Secundarios y Outline actualizados */
 .btn-secondary {
     background-color: transparent;
     color: var(--color-primary);
     border: 2px solid var(--color-primary);
-    box-shadow: none; /* Quitamos la sombra por defecto */
 }
 
 .btn-secondary:hover {
     background-color: var(--color-primary);
     color: var(--color-white);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Añadimos sombra al hover */
-    transform: translateY(-2px); 
 }
 
 .btn-primary-outline {
     background-color: transparent;
     color: var(--color-primary);
     border: 2px solid var(--color-primary);
-    box-shadow: none;
 }
 
 .btn-primary-outline:hover {
     background-color: var(--color-primary);
     color: var(--color-white);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-    transform: translateY(-2px); 
 }
 
 
@@ -144,23 +118,18 @@ h2 {
 
 
 /* ---------------------------------------------------- */
-/* 1. HEADER Y NAVEGACIÓN FIJA (SIEMPRE BLANCO Y SÓLIDO) */
+/* 1. HEADER Y NAVEGACIÓN FIJA */
 /* ---------------------------------------------------- */
 
 #main-header {
-    /* Fondo blanco y opaco SIEMPRE */
     background-color: var(--color-white) !important; 
     opacity: 1 !important; 
-    
-    /* Configuración de posición */
     position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     z-index: 9999 !important; 
     transition: all 0.3s ease; 
-
-    /* Sombra para distinguir la barra */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); 
     border-bottom: none !important; 
 }
@@ -193,7 +162,7 @@ h2 {
     display: none; 
 }
 
-/* ESTADO SCROLLED: Solo cambiamos el tamaño, no la opacidad. */
+/* ESTADO SCROLLED */
 #main-header.scrolled {
     background-color: var(--color-white) !important; 
     opacity: 1 !important;
@@ -269,7 +238,7 @@ h2 {
 }
 
 /* ---------------------------------------------------- */
-/* 3. HERO / CABECERA - Ajuste de Z-Index y Título */
+/* 3. HERO / CABECERA */
 /* ---------------------------------------------------- */
 
 .hero-section {
@@ -277,7 +246,6 @@ h2 {
     height: 100vh; 
     width: 100%;
     overflow: hidden;
-    /* Z-index bajo para que el Navbar esté por encima */
     z-index: 1; 
 }
 
@@ -316,7 +284,6 @@ h2 {
 }
 
 .hero-content h1 {
-    /* AJUSTE PARA EVITAR 3 LÍNEAS EN PANTALLAS GRANDES */
     font-size: 2.4em; 
     margin-bottom: 30px;
     font-family: var(--font-heading); 
@@ -324,7 +291,7 @@ h2 {
 
 
 /* ---------------------------------------------------- */
-/* 4. SERVICIOS DESTACADOS (3 Bloques) */
+/* 4. SERVICIOS DESTACADOS */
 /* ---------------------------------------------------- */
 
 .services-grid {
@@ -498,32 +465,30 @@ h2 {
 
 
 /* ---------------------------------------------------- */
-/* 7. FOOTER (MEJORADO: Fondo NARANJA, Texto Blanco) */
+/* 7. FOOTER */
 /* ---------------------------------------------------- */
 
 .footer-section {
-    /* CAMBIO: Fondo Naranja Corporativo */
     background-color: var(--color-primary); 
     color: var(--color-white);
-    padding: 60px 0 20px 0; /* Más padding arriba */
-    text-align: left; /* Alineación a la izquierda para las columnas */
+    padding: 60px 0 20px 0; 
+    text-align: left; 
 }
 
 .footer-content-grid {
     display: grid;
-    /* 3 columnas para desktop */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 40px;
     margin-bottom: 40px;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Línea divisoria suave */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
 }
 
 .footer-column h3 {
-    color: var(--color-white); /* Títulos de columna en blanco */
+    color: var(--color-white); 
     font-size: 1.2em;
     margin-bottom: 20px;
-    border-bottom: 2px solid var(--color-white); /* Subrayado sutil */
+    border-bottom: 2px solid var(--color-white); 
     padding-bottom: 5px;
 }
 
@@ -549,7 +514,6 @@ h2 {
     text-decoration: underline;
 }
 
-/* Estilos para el texto de contacto/info (si no son enlaces) */
 .footer-column p {
     margin-bottom: 15px;
     font-size: 0.95em;
@@ -569,10 +533,9 @@ h2 {
 }
 
 /* ---------------------------------------------------- */
-/* 8. PÁGINA NOSOTROS (Ajustado para Línea de Tiempo y Grid 3x2) */
+/* 8. PÁGINA NOSOTROS */
 /* ---------------------------------------------------- */
 
-/* Hero de subpáginas */
 .page-hero-title {
     padding-top: 100px; 
     padding-bottom: 40px;
@@ -582,7 +545,6 @@ h2 {
     font-size: 3em;
 }
 
-/* --- Feature Grid (General para 50/50 con texto e imagen) en Introduccion --- */
 .feature-grid {
     display: flex;
     align-items: center;
@@ -619,7 +581,6 @@ h2 {
     padding: 40px 0;
 }
 
-/* La línea vertical central */
 .timeline-container::after {
     content: '';
     position: absolute;
@@ -638,7 +599,6 @@ h2 {
     width: 50%;
 }
 
-/* El círculo del hito */
 .timeline-item::after {
     content: '';
     position: absolute;
@@ -652,17 +612,14 @@ h2 {
     z-index: 10;
 }
 
-/* Posicionar elementos a la izquierda */
 .left {
     left: 0;
 }
 
-/* Posicionar elementos a la derecha */
 .right {
     left: 50%;
 }
 
-/* Flecha a la izquierda */
 .left::before {
     content: " ";
     height: 0;
@@ -676,7 +633,6 @@ h2 {
     border-color: transparent transparent transparent var(--color-light-bg);
 }
 
-/* Flecha a la derecha */
 .right::before {
     content: " ";
     height: 0;
@@ -690,7 +646,6 @@ h2 {
     border-color: transparent var(--color-light-bg) transparent transparent;
 }
 
-/* Ajustar el círculo del hito para el lado derecho */
 .right::after {
     left: -10px;
 }
@@ -747,7 +702,7 @@ h2 {
 
 
 /* ---------------------------------------------------- */
-/* --- SECCIÓN POLÍTICA DE CALIDAD (Fondo GRIS CLARO) --- */
+/* --- SECCIÓN POLÍTICA DE CALIDAD --- */
 /* ---------------------------------------------------- */
 #politica-calidad {
     background-color: var(--color-light-bg); 
@@ -763,7 +718,6 @@ h2 {
     color: var(--color-text); 
 }
 
-/* CONTENEDOR PRINCIPAL: Flexbox para centrar el grid */
 .quality-policy-content {
     display: flex;
     flex-direction: column;
@@ -835,7 +789,7 @@ h2 {
 
 
 /* ---------------------------------------------------- */
-/* 9. PÁGINA DEPÓSITOS (stats-grid y deposito-grid) */
+/* 9. PÁGINA DEPÓSITOS */
 /* ---------------------------------------------------- */
 
 /* --- Grid de Estadísticas (Stats-Grid) --- */
@@ -929,10 +883,9 @@ h2 {
 }
 
 /* ---------------------------------------------------- */
-/* 10. PÁGINA TECNOLOGÍAS (WMS, BALANZA) */
+/* 10. PÁGINA TECNOLOGÍAS */
 /* ---------------------------------------------------- */
 
-/* --- Feature Grid (General para 50/50 con texto e imagen) --- */
 .check-list {
     list-style: none;
     padding-left: 0;
@@ -982,7 +935,6 @@ h2 {
 /* 11. PÁGINA SUSTENTABILIDAD */
 /* ---------------------------------------------------- */
 
-/* Estilo de ícono específico para sustentabilidad (color naranja) */
 .icon-large-green {
     font-size: 48px;
     color: var(--color-primary); 
@@ -1024,7 +976,7 @@ h2 {
 
 
 /* ---------------------------------------------------- */
-/* 12. SECCIÓN CONTACTO (Formulario y Mapa) - ESTILO PREMIUM */
+/* 12. SECCIÓN CONTACTO (Formulario y Mapa) */
 /* ---------------------------------------------------- */
 
 .contact-grid {
@@ -1268,7 +1220,6 @@ h2 {
 @media (max-width: 992px) {
     
     .hero-content h1 {
-        /* Se ajusta en tablet para que quepa bien */
         font-size: 2.2em; 
     }
 
@@ -1288,9 +1239,34 @@ h2 {
 /* Móvil (hasta 768px) */
 @media (max-width: 768px) {
     
-    /* AJUSTE: Ajustar padding para header móvil */
+    /* ---------------------------------------------------------------------- */
+    /* *** SOLUCIÓN CRÍTICA DE DESBORDAMIENTO HORIZONTAL (NAVBAR/WHATSAPP) *** */
+    /* ---------------------------------------------------------------------- */
+    
+    /* Aplicar a HTML y BODY para máxima compatibilidad con elementos fijos */
+    html, body { 
+        overflow-x: hidden; 
+    }
+    
+    /* Reposicionar WhatsApp con menos margen para evitar desbordamiento */
+    .whatsapp-btn {
+        right: 15px; 
+        bottom: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+    /* ---------------------------------------------------------------------- */
+    
+    /* AJUSTE GENERAL: Reducir padding general y compensar header */
     body {
         padding-top: 60px !important; 
+    }
+    .container {
+        padding: 0 10px; /* Reducir el padding lateral para ganar ancho */
+    }
+    .section-padding {
+        padding: 40px 0; /* Reducir padding de secciones */
     }
 
     /* 1. Header Fijo (Hamburguesa) */
@@ -1327,7 +1303,7 @@ h2 {
 
     /* Ocultar el menú de navegación por defecto */
     .main-nav {
-        top: 60px; /* Ajustado al nuevo header height móvil */
+        top: 60px; 
         position: fixed;
         right: 0;
         width: 100%;
@@ -1469,12 +1445,30 @@ h2 {
         max-width: 100%;
     }
     
-    /* Responsive para Contacto */
+    /* ------------------------------------------------ */
+    /* *** SOLUCIÓN CRÍTICA: CONTACTO Y MAPA *** */
+    /* ------------------------------------------------ */
     .contact-grid {
         flex-direction: column;
     }
     
-    /* En tablet y móvil, el formulario vuelve a una sola columna */
+    /* Contenedores: ELIMINA min-width, fuerza 100% y reduce padding */
+    .form-container,
+    .info-map-container {
+        min-width: 100% !important; 
+        width: 100% !important;
+        padding: 30px 15px; 
+    }
+    
+    /* SOLUCIÓN CRÍTICA PARA MAPA: Forzar al iframe a ocupar el 100% de su padre */
+    .location-map iframe {
+        width: 100% !important; 
+        max-width: 100% !important;
+        height: 300px !important; 
+    }
+    /* -------------------------------------- */
+    
+    /* Formulario de Contacto: Forzar a una sola columna */
     #main-contact-form {
         grid-template-columns: 1fr;
     }
@@ -1483,13 +1477,21 @@ h2 {
         grid-column: auto !important;
     }
 
-    /* Responsive para Trabaja con Nosotros */
+    /* ------------------------------------------------ */
+    /* *** SOLUCIÓN CRÍTICA: TRABAJÁ CON NOSOTROS *** */
+    /* ------------------------------------------------ */
     .job-application-grid {
         flex-direction: column;
     }
+    
+    /* ELIMINA el min-width y fuerza el 100% del contenedor de subida de CV */
     .form-upload-container {
-        min-width: 100%;
+        min-width: 100% !important;
+        width: 100% !important;
+        padding: 30px 15px; 
     }
+    
+    /* Grid de campos del formulario de postulación: 1 columna */
     .form-group-grid {
         grid-template-columns: 1fr;
     }
@@ -1497,7 +1499,7 @@ h2 {
         max-width: 100%;
     }
 
-    /* Responsive para Footer (en móvil, se apila) - AJUSTADO */
+    /* Responsive para Footer (en móvil, se apila) */
     .footer-section {
         padding: 40px 0 15px 0;
     }
@@ -1520,9 +1522,6 @@ h2 {
     .clients-grid {
         grid-template-columns: repeat(2, 1fr); 
     }
-    .whatsapp-btn {
-        width: 50px;
-        height: 50px;
-        font-size: 24px;
-    }
+    
+    /* El ajuste de WhatsApp ya está en 768px y es suficiente */
 }

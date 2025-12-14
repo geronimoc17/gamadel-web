@@ -54,6 +54,7 @@
             </div>
         </section>
 
+
 <section id="trabaja-con-nosotros" class="section-padding bg-light">
     <div class="container">
         <h2>Únete a Nuestro Equipo</h2>
@@ -79,22 +80,37 @@
             <div class="form-upload-container">
                 <h3>Datos de Postulación</h3>
                 
-                        <form 
-                id="application-form" 
-                method="POST" 
-                name="trabaja_con_nosotros" 
-                enctype="multipart/form-data" 
-                action="/gracias" 
-                action="/gracias" >
-                <input type="hidden" name="_next" value="/gracias" />
-                
-                <div class="file-upload-group">
-                    <label for="cv-file">Subir Currículum Vitae (CV)</label>
-                    <input type="file" name="Curriculum" id="cv-file" accept=".pdf, .doc, .docx" required>
-                    <span class="file-instructions">Formatos permitidos: PDF, DOCX (máx 5MB recomendado).</span>
-                </div>
+                <form 
+    id="application-form" 
+    method="POST" 
+    action="AQUÍ_PEGA_LA_URL_DE_FORMSUBMIT" 
+    enctype="multipart/form-data" 
+>
+    <input type="hidden" name="_next" value="URL_COMPLETA_DE_TU_PAGINA/gracias.html" />
+    
+    <input type="hidden" name="_subject" value="NUEVA POSTULACIÓN DE CV - Gamadel Web" />
 
-                </form>
+    
+    <div class="form-group-grid">
+        <div class="form-group">
+            <label for="nombre">Nombre y Apellido</label>
+            <input type="text" name="Nombre" id="nombre" required> 
+        </div>
+        <div class="form-group">
+            <label for="email">Correo Electrónico</label>
+            <input type="email" name="Email" id="email" required>
+        </div>
+        </div>
+
+    <div class="file-upload-group">
+        <label for="cv-file">Subir Currículum Vitae (CV)</label>
+        <input type="file" name="Adjunto" id="cv-file" accept=".pdf, .doc, .docx" required>
+        </div>
+
+    <button type="submit" class="btn btn-primary btn-full-width">
+        Enviar Postulación
+    </button>
+</form>
             </div>
             
         </div>
@@ -120,13 +136,6 @@
     </script>
     <script src="assets/js/main.js"></script>
 
-    <form name="trabaja_con_nosotros" netlify netlify-honeypot="bot-field" hidden>
-    <input name="nombre" type="text" />
-    <input name="email" type="email" />
-    <input name="telefono" type="tel" />
-    <input name="puesto" type="text" />
-    <input name="mensaje" type="text" />
-    <input name="Curriculum" type="file" />
-</form>
+    
 </body>
 </html>
