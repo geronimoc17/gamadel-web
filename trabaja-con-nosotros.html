@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajá con Nosotros | Gamadel S.A. - Oportunidades Laborales</title>
+    <link rel="icon" href="assets/img/gamadel_logo.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
+    <a href="https://wa.me/549247515412220" target="_blank" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header id="main-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/img/logo.jpg" alt="Gamadel S.A. Logo">
+            </a>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="depositos.html">Depósitos</a></li> 
+                    <li><a href="tecnologias.html">Tecnologías</a></li>
+                    <li><a href="sustentabilidad.html">Sustentabilidad</a></li>
+                    <li><a href="index.html#contacto">Contacto</a></li> 
+                    <li><a href="trabaja-con-nosotros.html" class="btn btn-secondary active">Trabajá con Nosotros</a></li>
+                </ul>
+            </nav>
+            
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    
+    <main>
+        <section class="page-hero-title bg-light section-padding">
+            <div class="container" data-aos="fade-up">
+                <h1>Sumate a Nuestro Equipo</h1>
+                <p class="section-subtitle">Buscamos talento apasionado por la logística y el agro. Si compartís nuestros valores, te invitamos a dejar tu CV.</p>
+            </div>
+        </section>
+
+        <section id="job-application" class="section-padding">
+            <div class="container">
+
+                <div class="job-application-grid">
+                    
+                    <div class="job-info" data-aos="fade-right">
+                        <h3>¿Por qué elegir Gamadel S.A.?</h3>
+                        <p>Somos una empresa familiar con más de 20 años en el sector, enfocada en la innovación y el desarrollo profesional de nuestra gente.</p>
+                        
+                        <ul class="check-list">
+                            <li><i class="fas fa-check"></i> Ambiente de trabajo colaborativo.</li>
+                            <li><i class="fas fa-check"></i> Formación y capacitación constante.</li>
+                            <li><i class="fas fa-check"></i> Fuerte compromiso con la seguridad y la sustentabilidad.</li>
+                            <li><i class="fas fa-check"></i> Oportunidades de crecimiento interno.</li>
+                        </ul>
+
+                        <div class="legal-notice">
+                            <p>Tu postulación será evaluada por nuestro equipo de RR. HH. y conservada en nuestra base de datos para futuras oportunidades.</p>
+                        </div>
+                    </div>
+
+                    <div class="form-upload-container" data-aos="fade-left">
+                        <h3>Formulario de Postulación</h3>
+                        
+                        <div id="job-success-message" style="display:none; text-align:center; padding: 40px; border: 2px solid var(--color-secondary); border-radius: 8px; background-color: #e6f7d9;">
+                            <i class="fas fa-check-circle icon-large" style="color: var(--color-secondary); margin-bottom: 20px;"></i>
+                            <h2>¡Postulación Enviada con Éxito!</h2>
+                            <p>Muchas gracias por tu interés en Gamadel S.A. Tu currículum ha sido recibido y será revisado por nuestro equipo de Recursos Humanos.</p>
+                            <p>Si tu perfil coincide con nuestras búsquedas actuales, nos pondremos en contacto a la brevedad.</p>
+                        </div>
+
+                        <form 
+                            id="job-form" 
+                            action="assets/procesar_cv.php" 
+                            method="POST" 
+                            enctype="multipart/form-data" 
+                            style="display: block;"
+                        >
+
+                            <div style="display:none;">
+                                <label for="spam_check">No rellene este campo:</label>
+                                <input type="text" name="spam_check" id="spam_check">
+                            </div>
+                            
+                            <div class="form-group-grid">
+                                
+                                <div class="form-group">
+                                    <label for="nombre">Nombre y Apellido *</label>
+                                    <input type="text" id="nombre" name="nombre" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="ciudad">Ciudad / Provincia *</label>
+                                    <input type="text" id="ciudad" name="ciudad" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="telefono">Teléfono *</label>
+                                    <input type="tel" id="telefono" name="telefono" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="email">Correo Electrónico *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="motivacion">Comentanos sobre tu motivación o área de interés:</label>
+                                <textarea id="motivacion" name="motivacion" rows="4"></textarea>
+                            </div>
+                            
+                            <div class="file-upload-group">
+                                <label for="cv-file">Adjuntar Curriculum Vitae *</label>
+                                <input type="file" id="cv-file" name="cv_file" accept=".pdf,.doc,.docx" required>
+                                <span class="file-instructions">Formatos permitidos: PDF, DOC o DOCX. Máx. 5MB.</span>
+                            </div>
+
+                            <div class="legal-notice-group">
+                                <div class="recaptcha-placeholder">
+                                    <input type="checkbox" id="legal-check" name="legal-check" required>
+                                    <label for="legal-check">Acepto el aviso legal y la política de privacidad *</label>
+                                </div>
+                                <p class="legal-notice">Los datos ingresados y el CV serán utilizados únicamente con fines de selección de personal y se mantendrán bajo estricta confidencialidad conforme a la Ley de Protección de Datos Personales.</p>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full-width">Enviar Postulación</button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+    </main>
+    
+
+    <footer id="contacto" class="footer-section">
+        <div class="container">
+            <div class="footer-content">
+                <p>Ruta 31 km 170.5 - Rojas -2705</p>
+                <p>Horarios de atención: Lunes a viernes de 8 a 18hs.</p>
+            </div>
+            <p class="copyright">© 2025 Gamadel S.A. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Inicialización de efectos de scroll
+        AOS.init({ duration: 800, once: true });
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
