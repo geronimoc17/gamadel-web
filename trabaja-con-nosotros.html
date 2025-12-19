@@ -16,40 +16,38 @@
                     
                     <div class="job-info-new">
                         <h2>Unite a nuestro equipo</h2>
-                        <p>En <strong>Gamadel</strong>, buscamos personas apasionadas que quieran crecer con nosotros en el mundo de la logística.</p>
-                        
+                        <p>En <strong>Gamadel</strong>, buscamos personas apasionadas que quieran crecer con nosotros.</p>
                         <ul class="benefits-list">
                             <li><i class="fas fa-check-circle"></i> Crecimiento profesional</li>
                             <li><i class="fas fa-check-circle"></i> Excelente clima laboral</li>
-                            <li><i class="fas fa-check-circle"></i> Capacitación constante</li>
                         </ul>
                     </div>
 
                     <div class="job-form-container">
-                        <form id="job-form" name="postulaciones" method="POST" data-netlify="true" enctype="multipart/form-data">
+                        <form name="postulaciones" method="POST" data-netlify="true" enctype="multipart/form-data">
                             
                             <input type="hidden" name="form-name" value="postulaciones" />
 
                             <div class="form-group">
-                                <label for="fullname">Nombre y Apellido</label>
-                                <input type="text" id="fullname" name="nombre_completo" placeholder="Ej: Juan Pérez" required>
+                                <label>Nombre y Apellido</label>
+                                <input type="text" name="nombre" placeholder="Ej: Juan Pérez" required>
                             </div>
 
                             <div class="form-group-row">
                                 <div class="form-group">
-                                    <label for="phone">Celular</label>
-                                    <input type="tel" id="phone" name="celular" placeholder="Cod. área + número" required>
+                                    <label>Celular</label>
+                                    <input type="tel" name="celular" placeholder="Cod. área + número" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                                    <label>Email</label>
+                                    <input type="email" name="email" placeholder="correo@ejemplo.com" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="cv">Adjuntá tu CV (PDF o Word)</label>
+                                <label>Adjuntá tu CV (PDF o Word)</label>
                                 <div class="file-upload-wrapper">
-                                    <input type="file" id="cv" name="cv_archivo" accept=".pdf,.doc,.docx" required onchange="updateFileName(this)">
+                                    <input type="file" name="cv_file" accept=".pdf,.doc,.docx" required onchange="updateFileName(this)">
                                     <div class="file-custom-design">
                                         <i class="fas fa-cloud-upload-alt"></i>
                                         <span id="file-name-text">Seleccionar archivo</span>
@@ -58,10 +56,6 @@
                             </div>
 
                             <button type="submit" class="btn-primary full-width">Enviar postulación</button>
-                            
-                            <div id="form-success" style="display:none; margin-top: 15px; padding: 15px; background: #d4edda; color: #155724; border-radius: 8px; text-align: center; font-weight: 600; border: 1px solid #c3e6cb;">
-                                <i class="fas fa-paper-plane"></i> ¡Postulación enviada con éxito!
-                            </div>
                         </form>
                     </div>
 
@@ -71,40 +65,14 @@
     </main>
 
     <script>
-        // Función para mostrar el nombre del archivo seleccionado
+        // Solo dejamos la función para que se vea el nombre del archivo al seleccionarlo
         function updateFileName(input) {
             const fileName = input.files[0] ? input.files[0].name : "Seleccionar archivo";
             document.getElementById('file-name-text').innerText = fileName;
         }
-
-        // Script de envío especial para Netlify con archivos
-        const jobForm = document.getElementById('job-form');
-
-        jobForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const formData = new FormData(jobForm);
-
-            // IMPORTANTE: Al enviar archivos por AJAX a Netlify, 
-            // no debemos poner Headers de Content-Type manualmente.
-            fetch("/", {
-                method: "POST",
-                body: formData,
-            })
-            .then(response => {
-                if (response.ok) {
-                    document.getElementById('form-success').style.display = 'block';
-                    jobForm.reset();
-                    document.getElementById('file-name-text').innerText = "Seleccionar archivo";
-                } else {
-                    throw new Error('Error en la respuesta del servidor');
-                }
-            })
-            .catch((error) => {
-                alert("Hubo un problema al enviar tu CV. Por favor, intenta de nuevo.");
-                console.error(error);
-            });
-        });
+        
+        // NO AGREGUES MÁS SCRIPTS DE ENVÍO (FETCH O AJAX)
+        // Deja que el navegador haga el envío natural para que Netlify capture el CV.
     </script>
 </body>
 </html>
