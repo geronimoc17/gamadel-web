@@ -16,46 +16,43 @@
                     
                     <div class="job-info-new">
                         <h2>Unite a nuestro equipo</h2>
-                        <p>En <strong>Gamadel</strong>, buscamos personas apasionadas que quieran crecer con nosotros en el mundo de la logística.</p>
-                        
+                        <p>En <strong>Gamadel</strong>, buscamos personas apasionadas que quieran crecer con nosotros.</p>
                         <ul class="benefits-list">
                             <li><i class="fas fa-check-circle"></i> Crecimiento profesional</li>
                             <li><i class="fas fa-check-circle"></i> Excelente clima laboral</li>
-                            <li><i class="fas fa-check-circle"></i> Capacitación constante</li>
                         </ul>
                     </div>
 
                     <div class="job-form-container">
-                        <form name="postulaciones" method="POST" data-netlify="true" enctype="multipart/form-data" action="/gracias.html">
+                        <form name="nueva_postulacion" method="POST" data-netlify="true" enctype="multipart/form-data">
                             
-                            <input type="hidden" name="form-name" value="postulaciones" />
+                            <input type="hidden" name="form-name" value="nueva_postulacion" />
 
                             <div class="form-group">
-                                <label for="fullname">Nombre y Apellido</label>
-                                <input type="text" name="nombre_completo" id="fullname" placeholder="Ej: Juan Pérez" required>
+                                <label>Nombre y Apellido</label>
+                                <input type="text" name="nombre" required>
                             </div>
 
                             <div class="form-group-row">
                                 <div class="form-group">
-                                    <label for="phone">Celular</label>
-                                    <input type="tel" name="celular" id="phone" placeholder="Cod. área + número" required>
+                                    <label>Celular</label>
+                                    <input type="tel" name="celular" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" placeholder="correo@ejemplo.com" required>
+                                    <label>Email</label>
+                                    <input type="email" name="email" required>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label for="cv">Adjuntá tu CV (PDF o Word)</label>
+                                <label>Adjuntá tu CV</label>
                                 <div class="file-upload-wrapper">
-                                    <input type="file" name="archivo_cv" id="cv" accept=".pdf,.doc,.docx" required onchange="updateFileName(this)">
+                                    <input type="file" name="archivo_cv" accept=".pdf,.doc,.docx" required onchange="updateFileName(this)">
                                     <div class="file-custom-design">
                                         <i class="fas fa-cloud-upload-alt"></i>
                                         <span id="file-name-text">Seleccionar archivo</span>
                                     </div>
                                 </div>
-                                <small style="display:block; margin-top:5px; color:#666;">Máximo 5MB (PDF o Word)</small>
                             </div>
 
                             <button type="submit" class="btn-primary full-width">Enviar postulación</button>
@@ -68,12 +65,11 @@
     </main>
 
     <script>
-        // Esta función solo actualiza el nombre del archivo en pantalla
-        // El envío lo hace el navegador automáticamente hacia Netlify
         function updateFileName(input) {
             const fileName = input.files[0] ? input.files[0].name : "Seleccionar archivo";
             document.getElementById('file-name-text').innerText = fileName;
         }
+        // HEMOS ELIMINADO TODO EL SCRIPT DE ENVÍO PARA QUE NO HAYA ERRORES
     </script>
 </body>
 </html>
