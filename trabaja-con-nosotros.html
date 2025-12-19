@@ -14,52 +14,40 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        /* Estilos específicos para la nueva estructura de contacto centrada */
-        .contact-simple-container {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
-        .info-only-wrapper {
-            text-align: center;
-            width: 100%;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            border-top: 5px solid var(--color-secondary);
-        }
-        .whatsapp-contact-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 18px 35px;
-            font-size: 1.2em;
-            margin-top: 20px;
-            text-decoration: none;
-            width: 100%;
-            max-width: 400px;
-            border-radius: 50px;
-            transition: transform 0.3s;
-        }
-        .whatsapp-contact-btn:hover {
-            transform: scale(1.05);
-        }
-        .location-map {
-            width: 100%;
-        }
-        .location-map iframe {
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-    </style>
 </head>
 <body>
+    
+    <a href="https://wa.me/5492475412220" target="_blank" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header id="main-header">
+        <div class="container">
+            <div class="logo-wrapper"> 
+                <a href="index.html" class="logo"> 
+                    <img src="assets/img/logo.jpg" alt="Gamadel S.A. Logo">
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li> 
+                    <li><a href="depositos.html">Depósitos</a></li>
+                    <li><a href="tecnologias.html">Tecnologías</a></li>
+                    <li><a href="sustentabilidad.html">Sustentabilidad</a></li>
+                    <li><a href="index.html#contact-form">Contacto</a></li> 
+                    <li><a href="trabaja-con-nosotros.html" class="btn btn-primary" style="color: white">Trabajá con Nosotros</a></li>
+                </ul>
+            </nav>
+            
+            <button class="menu-toggle" aria-label="Abrir Menú de Navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
 
     <main>
         <section class="job-page section-padding">
@@ -103,7 +91,8 @@
                                     <div class="file-custom-design">
                                         <i class="fas fa-cloud-upload-alt"></i>
                                         <span id="file-name-text">Seleccionar archivo</span>
-                                    </div>
+                                    </div>\
+                                    <br>
                                 </div>
                             </div>
 
