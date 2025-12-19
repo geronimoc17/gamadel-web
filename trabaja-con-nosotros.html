@@ -3,181 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gamadel S.A. | Logística Global para el Agro</title>
-    <link rel="icon" href="assets/img/gamadel_logo.png" type="image/png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+    <title>Trabajá con nosotros - Gamadel</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        /* Estilos específicos para la nueva estructura de contacto centrada */
-        .contact-simple-container {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-        }
-        .info-only-wrapper {
-            text-align: center;
-            width: 100%;
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-            border-top: 5px solid var(--color-secondary);
-        }
-        .whatsapp-contact-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 18px 35px;
-            font-size: 1.2em;
-            margin-top: 20px;
-            text-decoration: none;
-            width: 100%;
-            max-width: 400px;
-            border-radius: 50px;
-            transition: transform 0.3s;
-        }
-        .whatsapp-contact-btn:hover {
-            transform: scale(1.05);
-        }
-        .location-map {
-            width: 100%;
-        }
-        .location-map iframe {
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    
-    <a href="https://wa.me/5492475412220" target="_blank" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
 
-    <header id="main-header">
-        <div class="container">
-            <div class="logo-wrapper"> 
-                <a href="index.html" class="logo"> 
-                    <img src="assets/img/logo.jpg" alt="Gamadel S.A. Logo">
-                </a>
-            </div>
-            
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="nosotros.html">Nosotros</a></li> 
-                    <li><a href="depositos.html">Depósitos</a></li>
-                    <li><a href="tecnologias.html">Tecnologías</a></li>
-                    <li><a href="sustentabilidad.html">Sustentabilidad</a></li>
-                    <li><a href="index.html#contact-form">Contacto</a></li> 
-                    <li><a href="trabaja-con-nosotros.html" class="btn btn-primary" style="color: white">Trabajá con Nosotros</a></li>
-                </ul>
-            </nav>
-            
-            <button class="menu-toggle" aria-label="Abrir Menú de Navegación">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
-        </div>
-    </header>
-
-    
     <main>
-        <section class="page-hero-title bg-light section-padding">
-            <div class="container" data-aos="fade-up">
-                <h1>Sumate a Nuestro Equipo</h1>
-                <p class="section-subtitle">Buscamos talento apasionado por la logística y el agro. Si compartís nuestros valores, te invitamos a dejar tu CV.</p>
+        <section class="job-page section-padding">
+            <div class="container">
+                <div class="job-application-wrapper">
+                    
+                    <div class="job-info-new">
+                        <h2>Unite a nuestro equipo</h2>
+                        <p>En <strong>Gamadel</strong>, buscamos personas apasionadas y comprometidas que quieran crecer con nosotros en el mundo de la logística y la tecnología.</p>
+                        
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check-circle"></i> Crecimiento profesional</li>
+                            <li><i class="fas fa-check-circle"></i> Excelente clima laboral</li>
+                            <li><i class="fas fa-check-circle"></i> Capacitación constante</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-form-container">
+                        <form id="job-form" name="postulaciones" method="POST" data-netlify="true" enctype="multipart/form-data">
+                            
+                            <input type="hidden" name="form-name" value="postulaciones" />
+
+                            <div class="form-group">
+                                <label for="fullname">Nombre y Apellido</label>
+                                <input type="text" id="fullname" name="nombre_completo" placeholder="Ej: Juan Pérez" required>
+                            </div>
+
+                            <div class="form-group-row">
+                                <div class="form-group">
+                                    <label for="phone">Celular</label>
+                                    <input type="tel" id="phone" name="celular" placeholder="Cod. área + número" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cv">Adjuntá tu CV (PDF o Word)</label>
+                                <div class="file-upload-wrapper">
+                                    <input type="file" id="cv" name="archivo_cv" accept=".pdf,.doc,.docx" required onchange="updateFileName(this)">
+                                    <div class="file-custom-design">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <span id="file-name-text">Seleccionar archivo</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-primary full-width">Enviar postulación</button>
+                            
+                            <div id="form-success" style="display:none; margin-top: 15px; padding: 15px; background: #d4edda; color: #155724; border-radius: 8px; text-align: center; font-weight: 600; border: 1px solid #c3e6cb;">
+                                <i class="fas fa-paper-plane"></i> ¡Postulación enviada con éxito! Nos contactaremos pronto.
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
             </div>
         </section>
-
-
-<section class="job-page section-padding">
-    <div class="container">
-        <div class="job-application-wrapper">
-            
-            <div class="job-info">
-                <h2>Unite a nuestro equipo</h2>
-                <p>En <STrong></STrong>Gamadel</STrong>, buscamos personas apasionadas y comprometidas que quieran crecer con nosotros en el mundo de la logística y la tecnología.</p>
-                
-                <ul class="benefits-list">
-                    <li><i class="fas fa-check-circle"></i> Crecimiento profesional</li>
-                    <li><i class="fas fa-check-circle"></i> Excelente clima laboral</li>
-                    <li><i class="fas fa-check-circle"></i> Capacitación constante</li>
-                </ul>
-            </div>
-
-            <div class="job-form-container">
-                <form id="job-form" action="https://formspree.io/f/xnjaqwaj" method="POST" enctype="multipart/form-data">
-                    <div class="form-group">
-                        <label for="fullname">Nombre y Apellido</label>
-                        <input type="text" id="fullname" name="fullname" placeholder="Ej: Juan Pérez" required>
-                    </div>
-
-                    <div class="form-group-row">
-                        <div class="form-group">
-                            <br>
-                            <label for="phone">Celular</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Cod. área + número" required>
-                        </div>
-                        <div class="form-group">
-                            <br>
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="correo@ejemplo.com" required>
-                        </div>
-                    </div>
-<br>
-                    <div class="form-group">
-                        <label for="cv">Adjuntá tu CV (PDF o Word)</label>
-                        <br>
-                        <div class="file-upload-wrapper">
-                            <input type="file" id="cv" name="upload" accept=".pdf,.doc,.docx" required onchange="updateFileName(this)">
-                            <div class="file-custom-design">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <span>Seleccionar archivo</span>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-
-                    <button type="submit" class="btn-primary full-width">Enviar postulación</button>
-                </form>
-            </div>
-
-        </div>
-    </div>
-</section>
     </main>
-    
 
-    <footer id="contacto" class="footer-section">
-        <div class="container">
-            <div class="footer-content">
-                <p>Ruta 31 km 170.5 - Rojas -2705</p>
-                <p>Horarios de atención: Lunes a viernes de 8 a 18hs.</p>
-            </div>
-            <p class="copyright">© 2025 Gamadel S.A. Todos los derechos reservados.</p>
-        </div>
-    </footer>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Inicialización de efectos de scroll
-        AOS.init({ duration: 800, once: true });
-    </script>
-    <script src="assets/js/main.js"></script>
+        // Actualiza el texto del recuadro cuando se elige un archivo
+        function updateFileName(input) {
+            if (input.files && input.files.length > 0) {
+                const fileName = input.files[0].name;
+                document.getElementById('file-name-text').innerText = fileName;
+            } else {
+                document.getElementById('file-name-text').innerText = "Seleccionar archivo";
+            }
+        }
 
-    
+        // Manejo del envío vía AJAX para que no se recargue la página
+        const jobForm = document.getElementById('job-form');
+        const successMessage = document.getElementById('form-success');
+
+        jobForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(jobForm);
+
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString(),
+            })
+            .then(() => {
+                // Si sale bien, mostramos el cartel verde y reseteamos el formulario
+                successMessage.style.display = 'block';
+                jobForm.reset();
+                document.getElementById('file-name-text').innerText = "Seleccionar archivo";
+                
+                // Opcional: ocultar el mensaje después de 5 segundos
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            })
+            .catch((error) => {
+                alert("Error al enviar el formulario. Por favor, revisa tu conexión.");
+                console.error(error);
+            });
+        });
+    </script>
 </body>
 </html>
