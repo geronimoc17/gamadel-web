@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trabajá con nosotros - Gamadel</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
                     
                     <div class="job-info-new">
                         <h2>Unite a nuestro equipo</h2>
-                        <p>En <strong>Gamadel</strong>, buscamos personas apasionadas y comprometidas que quieran crecer con nosotros en el mundo de la logística y la tecnología.</p>
+                        <p>En <strong>Gamadel</strong>, buscamos personas apasionadas que quieran crecer con nosotros en el mundo de la logística.</p>
                         
                         <ul class="benefits-list">
                             <li><i class="fas fa-check-circle"></i> Crecimiento profesional</li>
@@ -49,7 +49,7 @@
                             <div class="form-group">
                                 <label for="cv">Adjuntá tu CV (PDF o Word)</label>
                                 <div class="file-upload-wrapper">
-                                    <input type="file" id="cv" name="archivo_cv" accept=".pdf,.doc,.docx" required onchange="updateFileName(this)">
+                                    <input type="file" id="cv" name="cv_archivo" accept=".pdf,.doc,.docx" required onchange="updateFileName(this)">
                                     <div class="file-custom-design">
                                         <i class="fas fa-cloud-upload-alt"></i>
                                         <span id="file-name-text">Seleccionar archivo</span>
@@ -60,7 +60,7 @@
                             <button type="submit" class="btn-primary full-width">Enviar postulación</button>
                             
                             <div id="form-success" style="display:none; margin-top: 15px; padding: 15px; background: #d4edda; color: #155724; border-radius: 8px; text-align: center; font-weight: 600; border: 1px solid #c3e6cb;">
-                                <i class="fas fa-paper-plane"></i> ¡Postulación enviada con éxito! Nos contactaremos pronto.
+                                <i class="fas fa-paper-plane"></i> ¡Postulación enviada con éxito!
                             </div>
                         </form>
                     </div>
@@ -71,43 +71,37 @@
     </main>
 
     <script>
-        // Actualiza el texto del recuadro cuando se elige un archivo
+        // Función para mostrar el nombre del archivo seleccionado
         function updateFileName(input) {
-            if (input.files && input.files.length > 0) {
-                const fileName = input.files[0].name;
-                document.getElementById('file-name-text').innerText = fileName;
-            } else {
-                document.getElementById('file-name-text').innerText = "Seleccionar archivo";
-            }
+            const fileName = input.files[0] ? input.files[0].name : "Seleccionar archivo";
+            document.getElementById('file-name-text').innerText = fileName;
         }
 
-        // Manejo del envío vía AJAX para que no se recargue la página
+        // Script de envío especial para Netlify con archivos
         const jobForm = document.getElementById('job-form');
-        const successMessage = document.getElementById('form-success');
 
         jobForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
             const formData = new FormData(jobForm);
 
+            // IMPORTANTE: Al enviar archivos por AJAX a Netlify, 
+            // no debemos poner Headers de Content-Type manualmente.
             fetch("/", {
                 method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString(),
+                body: formData,
             })
-            .then(() => {
-                // Si sale bien, mostramos el cartel verde y reseteamos el formulario
-                successMessage.style.display = 'block';
-                jobForm.reset();
-                document.getElementById('file-name-text').innerText = "Seleccionar archivo";
-                
-                // Opcional: ocultar el mensaje después de 5 segundos
-                setTimeout(() => {
-                    successMessage.style.display = 'none';
-                }, 5000);
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('form-success').style.display = 'block';
+                    jobForm.reset();
+                    document.getElementById('file-name-text').innerText = "Seleccionar archivo";
+                } else {
+                    throw new Error('Error en la respuesta del servidor');
+                }
             })
             .catch((error) => {
-                alert("Error al enviar el formulario. Por favor, revisa tu conexión.");
+                alert("Hubo un problema al enviar tu CV. Por favor, intenta de nuevo.");
                 console.error(error);
             });
         });
