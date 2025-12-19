@@ -14,125 +14,138 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <link rel="stylesheet" href="assets/css/style.css">
-
+    <style>
+        /* Estilos específicos para la nueva estructura de contacto centrada */
+        .contact-simple-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        .info-only-wrapper {
+            text-align: center;
+            width: 100%;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--color-secondary);
+        }
+        .whatsapp-contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 18px 35px;
+            font-size: 1.2em;
+            margin-top: 20px;
+            text-decoration: none;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 50px;
+            transition: transform 0.3s;
+        }
+        .whatsapp-contact-btn:hover {
+            transform: scale(1.05);
+        }
+        .location-map {
+            width: 100%;
+        }
+        .location-map iframe {
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
     
-    <a href="https://wa.me/549247515412220" target="_blank" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
+    <a href="https://wa.me/5492475412220" target="_blank" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <header id="main-header">
-    <div class="container">
-        
-        <div class="logo-wrapper"> 
-            <a href="index.html" class="logo"> 
-                <img src="assets/img/logo.jpg" alt="Gamadel S.A. Logo">
-            </a>
+        <div class="container">
+            <div class="logo-wrapper"> 
+                <a href="index.html" class="logo"> 
+                    <img src="assets/img/logo.jpg" alt="Gamadel S.A. Logo">
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li> 
+                    <li><a href="depositos.html">Depósitos</a></li>
+                    <li><a href="tecnologias.html">Tecnologías</a></li>
+                    <li><a href="sustentabilidad.html">Sustentabilidad</a></li>
+                    <li><a href="#index.html/contact-form">Contacto</a></li> 
+                    <li><a href="trabaja-con-nosotros.html" class="btn btn-primary" style="color: white">Trabajá con Nosotros</a></li>
+                </ul>
+            </nav>
+            
+            <button class="menu-toggle" aria-label="Abrir Menú de Navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
-        
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html" class="active">Inicio</a></li>
-                <li><a href="nosotros.html">Nosotros</a></li> 
-                <li><a href="depositos.html">Depósitos</a></li>
-                <li><a href="tecnologias.html">Tecnologías</a></li>
-                <li><a href="sustentabilidad.html">Sustentabilidad</a></li>
-                <li><a href="#contact-form">Contacto</a></li> 
-                <li><a href="trabaja-con-nosotros.html" class="btn btn-primary" style="color: white">Trabajá con Nosotros</a></li>
-            </ul>
-        </nav>
-        
-        <button class="menu-toggle" aria-label="Abrir Menú de Navegación">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-    </div>
-</header>
+    </header>
 
-    
     <main>
-        
         <section id="inicio" class="hero-section">
             <video autoplay muted loop playsinline class="hero-video">
                 <source src="assets/video/IMG_2785.mp4" type="video/mp4">
-                Tu navegador no soporta la etiqueta de video.
             </video>
-            
             <div class="hero-overlay">
                 <div class="hero-content">
-                    <h1 style="color: white !important; text-shadow: 0 0 15px rgba(255, 140, 0, 1), 2px 2px 6px rgba(0, 0, 0, 0.8);">GAMADEL: más que depósitos, soluciones pensadas para crecer junto a vos.</h1> 
+                    <h1 style="color: white !important; text-shadow: none !important; -webkit-text-stroke: 1.2px #d3d3d3;">Más que depósitos, soluciones pensadas para crecer junto a vos.</h1> 
                 </div>
             </div>
         </section>
 
-
         <section id="servicios-destacados" class="section-padding">
             <div class="container">
-                <h2 id="depositos">Nuestras Soluciones Logísticas Destacadas</h2> <p class="section-subtitle">Pensamos cada servicio para acompañar la evolución de tu industria.</p>
-
+                <h2 id="depositos">Nuestras Soluciones Logísticas Destacadas</h2> 
+                <p class="section-subtitle">Pensamos cada servicio para acompañar la evolución de tu industria.</p>
                 <div class="services-grid">
-                    
-                    <div class="service-card aos-init" data-aos="fade-up">
+                    <div class="service-card" data-aos="fade-up">
                         <i class="fas fa-warehouse icon-large"></i> 
                         <h3>Depósito de Última Generación</h3>
                         <p>Contamos con más de 47.000 m² de instalaciones, incluyendo cámaras de frío, depósitos certificados CASAFE y silos.</p>
                         <a href="depositos.html" class="read-more">Ver detalles →</a>
                     </div>
-
-                    <div class="service-card aos-init" data-aos="fade-up" data-aos-delay="150">
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="150">
                         <i class="fas fa-route icon-large"></i> 
-                        <h3 id="tecnologias">Distribución Estratégica</h3> <p>Optimizamos el picking y despacho de mercadería utilizando dispositivos móviles y el sistema WMS para máxima eficiencia.</p>
+                        <h3>Distribución Estratégica</h3> 
+                        <p>Optimizamos el picking y despacho de mercadería utilizando dispositivos móviles y el sistema WMS.</p><br><br>
                         <a href="tecnologias.html" class="read-more">Ver detalles →</a>
                     </div>
-
-                    <div class="service-card aos-init" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
                         <i class="fas fa-certificate icon-large"></i>
-                        <h3 id="certificaciones">Calidad Certificada</h3> <p>Nuestros procesos cumplen con altos estándares, con certificación CASAFE Premium en el almacenamiento de agroquímicos.</p>
+                        <h3>Calidad Certificada</h3> 
+                        <p>Nuestros procesos cumplen con altos estándares, con certificación CASAFE Premium.</p><br><br>
                         <a href="nosotros.html#politica-calidad" class="read-more">Ver detalles →</a>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        
         <section id="clientes" class="section-padding bg-light">
             <div class="container">
                 <h2 data-aos="fade-up">Nuestros Principales Clientes</h2>
-                
                 <div class="clients-grid">
-                    <div class="client-logo" data-aos="zoom-in" data-aos-delay="50">
-                        <img src="assets/img/bioceres.png" alt="Logo Bioceres">
-                    </div>
-                    <div class="client-logo" data-aos="zoom-in" data-aos-delay="100">
-                        <img src="assets/img/basf.png" alt="Logo BASF">
-                    </div>
-                    <div class="client-logo" data-aos="zoom-in" data-aos-delay="150">
-                        <img src="assets/img/ID.png" alt="Logo Producción Research">
-                    </div>
-                    <div class="client-logo" data-aos="zoom-in" data-aos-delay="200">
-                        <img src="assets/img/BAYER.png" alt="Logo Bayer Fundadora">
-                    </div>
-                    <div class="client-logo" data-aos="zoom-in" data-aos-delay="250">
-                        <img src="assets/img/DEGSER.png" alt="Logo Bayer Logística">
-                    </div>
-                    <div class="client-logo" data-aos="zoom-in" data-aos-delay="300">
-                        <img src="assets/img/DOMARIO.png" alt="Logo Bayer Insumos">
-                    </div>
-                    <div class="client-logo" data-aos="zoom-in" data-aos-delay="350">
-                        <img src="assets/img/RIZOBACTER.png" alt="Logo Bayer Químicos">
-                    </div>
-                    <div class="client-logo" data-aos="zoom-in" data-aos-delay="400">
-                        <img src="assets/img/CHROBINSON.png" alt="Logo Robinson Logistic">
-                    </div>
-                    <div class="client-logo" data-aos="zoom-in" data-aos-delay="450">
-                        <img src="assets/img/TSDGROUP.png" alt="Logo Mantenimiento TSD">
-                    </div>
-                    <div class="client-logo" data-aos="zoom-in" data-aos-delay="500">
-                        <img src="assets/img/SYNGENTA.jpg" alt="Logo Syngenta">
-                    </div>
+                    <div class="client-logo" data-aos="zoom-in"><img src="assets/img/bioceres.png" alt="Bioceres"></div>
+                    <div class="client-logo" data-aos="zoom-in"><img src="assets/img/basf.png" alt="BASF"></div>
+                    <div class="client-logo" data-aos="zoom-in"><img src="assets/img/ID.png" alt="ID"></div>
+                    <div class="client-logo" data-aos="zoom-in"><img src="assets/img/BAYER.png" alt="Bayer"></div>
+                    <div class="client-logo" data-aos="zoom-in"><img src="assets/img/DEGSER.png" alt="Degser"></div>
+                    <div class="client-logo" data-aos="zoom-in"><img src="assets/img/DOMARIO.png" alt="Domario"></div>
+                    <div class="client-logo" data-aos="zoom-in"><img src="assets/img/RIZOBACTER.png" alt="Rizobacter"></div>
+                    <div class="client-logo" data-aos="zoom-in"><img src="assets/img/CHROBINSON.png" alt="Robinson"></div>
+                    <div class="client-logo" data-aos="zoom-in"><img src="assets/img/TSDGROUP.png" alt="TSD"></div>
+                    <div class="client-logo" data-aos="zoom-in"><img src="assets/img/SYNGENTA.jpg" alt="Syngenta"></div>
                 </div>
             </div>
         </section>
@@ -140,126 +153,69 @@
         <section id="testimonios" class="section-padding">
             <div class="container">
                 <h2 data-aos="fade-up">Quienes nos eligen</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Compromiso y confianza avalados por quienes nos eligen.</p>
-
-                <div class="testimonial-slider-container" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-slider-container" data-aos="fade-up">
                     <div class="testimonial-slider">
-                        
                         <div class="testimonial-card">
-                            <div class="rating">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            </div>
-                            <p class="quote">"El servicio logístico de Gamadel S.A. nos ha permitido optimizar tiempos de entrega y almacenamiento de agroquímicos, cumpliendo con todas las normativas CASAFE. Un aliado estratégico."</p>
-                            <div class="client-info">
-                                <span class="client-name">Juan Pérez (Gerente de Logística)</span>
-                                <span class="client-company">BASF</span>
-                            </div>
+                            <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="quote">"El servicio logístico de Gamadel S.A. nos ha permitido optimizar tiempos de entrega y almacenamiento de agroquímicos."</p>
+                            <div class="client-info"><span class="client-name">Juan Pérez</span><span class="client-company">BASF</span></div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <p class="quote">"Su infraestructura de cámaras de frío es vital para la guarda de nuestras semillas. Tecnología de punta."</p>
+                            <div class="client-info"><span class="client-name">María González</span><span class="client-company">Bioceres</span></div>
                         </div>
 
-                        <div class="testimonial-card">
-                            <div class="rating">
-                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <p class="quote">"Su infraestructura de cámaras de frío es vital para la guarda de nuestras semillas. La tecnología de monitoreo en tiempo real nos da mucha tranquilidad."</p>
-                            <div class="client-info">
-                                <span class="client-name">María González (Jefa de Producción)</span>
-                                <span class="client-company">Bioceres</span>
-                            </div>
-                        </div>
-                        
                         <div class="testimonial-card testimonial-google">
                             <div class="rating">
                                 <i class="fab fa-google"></i>
-                                <p>Ver más de 50 reseñas en Google Maps</p>
+                                <p style="margin: 15px 0; font-weight: 600;">Ver más de 50 reseñas en Google Maps</p>
                             </div>
-                            <a href="https://www.google.com/search?sca_esv=be6047ef5dda0c71&sxsrf=AE3TifMrztxLVyO95rCCE_hAuFK1RK_Vrw:1765722002063&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-Ez46WGuu5DU69dGzmihK7EsMIXybSkO-fOzsJ_3jdFPblIAA3XfKd0rx-mu8pWCuVSdQe0aW9Qah4E829BDMH6TEe5-a&q=GAMADEL+S.A.+Opiniones&sa=X&ved=2ahUKEwiQ4dGFo72RAxW6LLkGHV0cAtsQ0bkNegQILBAD&biw=1366&bih=599&dpr=1" target="_blank" class="btn btn-primary-outline">Ver Reseñas</a>
+                            <a href="https://www.google.com/search?q=GAMADEL+S.A.+Opiniones" class="read-more">Ver Reseñas</a>
                         </div>
                         
                     </div>
                 </div>
             </div>
         </section>
-        
-        </main>
+    </main>
     
     <section id="contact-form" class="section-padding bg-light">
-    <div class="container">
-        <h2 data-aos="fade-up">Contactanos</h2>
-        <p class="section-subtitle">Estamos listos para responder tus consultas. Completá el formulario o contactanos por teléfono.</p>
-
-        <div class="contact-grid">
-            
-            <div class="form-container" data-aos="fade-right">
-                <h3>Envianos tu Consulta</h3>
-                
-                <form action="#" method="POST" id="main-contact-form">
-                    <div class="form-group">
-                        <label for="nombre">Nombre y Apellido *</label>
-                        <input type="text" id="nombre" name="nombre" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="celular">Celular *</label>
-                        <input type="tel" id="celular" name="celular" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="mail">Correo Electrónico *</label>
-                        <input type="email" id="mail" name="mail" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="localidad">Localidad / Provincia</label>
-                        <input type="text" id="localidad" name="localidad">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="consulta">Tu Consulta *</label>
-                        <textarea id="consulta" name="consulta" rows="5" required></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
-                    
-                    <p id="success-message" style="display:none; color: var(--color-secondary); margin-top: 15px; font-weight: bold;">Gracias por contactarnos. Te responderemos a la brevedad.</p>
-                </form>
-            </div>
-
-            <div class="info-map-container" data-aos="fade-left">
-                
-                <div class="quick-contact-info">
+        <div class="container">
+            <h2 data-aos="fade-up">Contactanos</h2>
+            <p class="section-subtitle">Estamos listos para responder tus consultas. Contactanos directamente por WhatsApp.</p>
+            <div class="contact-simple-container" data-aos="fade-up">
+                <div class="info-only-wrapper">
                     <h3>Datos de Contacto</h3>
-                    <p><i class="fas fa-envelope"></i> Mail Comercial: <a href="mailto:lucas.nota@gamadel.com.ar">lucas.nota@gamadel.com.ar</a></p>
-                    <p><i class="fas fa-envelope"></i> Mail Administrativo: <a href="mailto:administracion@gamadel.com.ar">administracion@gamadel.com.ar</a></p>
-                    <p><i class="fas fa-phone-alt"></i> Teléfono: <a href="tel:0247515412220">02475-15412220</a></p>
-                    <p><i class="fas fa-clock"></i> Horarios: Lunes a viernes de 8 a 18hs.</p>
+                    <div class="quick-contact-info">
+                        <p><i class="fas fa-envelope"></i> <strong>Mail Comercial:</strong> <a href="mailto:lucas.nota@gamadel.com.ar">lucas.nota@gamadel.com.ar</a></p>
+                        <p><i class="fas fa-phone-alt"></i> <strong>Teléfono:</strong> <a href="tel:0247515412220">02475-15412220</a></p>
+                        <p><i class="fas fa-clock"></i> <strong>Horarios:</strong> Lunes a viernes de 8 a 18hs.</p>
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Ubicación:</strong> Ruta 31 km 170.5 - Rojas</p>
+                    </div>
+                    <a href="https://wa.me/5492475412220?text=Hola%20Gamadel!%20Quiero%20hacer%20una%20consulta:%0A%0A-%20Nombre:%20%0A-%20Número:%20%0A-%20Consulta:%20" class="btn btn-primary whatsapp-contact-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> Enviar consulta por WhatsApp
+                    </a>
                 </div>
-                
                 <div class="location-map">
-                    <h3>Ubicación</h3>
-                    <p class="map-address"><i class="fas fa-map-marker-alt"></i> Ruta 31 km 170.5 - Rojas -2705</p>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3299.8400555314233!2d-60.69837962523693!3d-34.201562836369455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b8570d95bf0657%3A0x9059db1954362cd9!2sGAMADEL%20S.A.!5e0!3m2!1ses-419!2sar!4v1765721858547!5m2!1ses-419!2sar" width="470" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13264.846561078726!2d-60.6!3d-34.2!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDEyJzAwLjAiUyA2MMKwMzYnMDAuMCJX!5e0!3m2!1ses!2sar!4v1630000000000" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <footer id="contacto" class="footer-section">
+    <footer class="footer-section">
         <div class="container">
-            <div class="footer-content">
-                <p>Ruta 31 km 170.5 - Rojas -2705</p>
-                <p>Horarios de atención: Lunes a viernes de 8 a 18hs.</p>
+            <div class="footer-content" style="text-align: center;">
+                <p>Ruta 31 km 170.5 - Rojas - 2705 | Tel: 02475-15412220</p>
+                <p class="copyright" style="margin-top: 20px;">© 2025 Gamadel S.A. Todos los derechos reservados.</p>
             </div>
-            <p class="copyright">© 2025 Gamadel S.A. Todos los derechos reservados.</p>
         </div>
     </footer>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 800,
-            once: true
-        });
+        AOS.init({ duration: 800, once: true });
     </script>
     <script src="assets/js/main.js"></script>
 </body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nosotros | Gamadel S.A.</title>
+    <title>Gamadel S.A. | Logística Global para el Agro</title>
     <link rel="icon" href="assets/img/gamadel_logo.png" type="image/png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,31 +11,88 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Estilos específicos para la nueva estructura de contacto centrada */
+        .contact-simple-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        .info-only-wrapper {
+            text-align: center;
+            width: 100%;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--color-secondary);
+        }
+        .whatsapp-contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 18px 35px;
+            font-size: 1.2em;
+            margin-top: 20px;
+            text-decoration: none;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 50px;
+            transition: transform 0.3s;
+        }
+        .whatsapp-contact-btn:hover {
+            transform: scale(1.05);
+        }
+        .location-map {
+            width: 100%;
+        }
+        .location-map iframe {
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
     
+    <a href="https://wa.me/5492475412220" target="_blank" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <header id="main-header">
         <div class="container">
-            <a href="index.html" class="logo"> 
-                <img src="assets/img/logo.jpg" alt="Gamadel S.A. Logo">
-            </a>
+            <div class="logo-wrapper"> 
+                <a href="index.html" class="logo"> 
+                    <img src="assets/img/logo.jpg" alt="Gamadel S.A. Logo">
+                </a>
+            </div>
             
             <nav class="main-nav">
                 <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="nosotros.html" class="active">Nosotros</a></li> 
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li> 
                     <li><a href="depositos.html">Depósitos</a></li>
                     <li><a href="tecnologias.html">Tecnologías</a></li>
                     <li><a href="sustentabilidad.html">Sustentabilidad</a></li>
-                    <li><a href="index.html#contacto">Contacto</a></li> 
-                    <li><a href="trabaja-con-nosotros.html" class="btn btn-secondary">Trabajá con Nosotros</a></li>
+                    <li><a href="index.html#contact-form">Contacto</a></li> 
+                    <li><a href="trabaja-con-nosotros.html" class="btn btn-primary" style="color: white">Trabajá con Nosotros</a></li>
                 </ul>
             </nav>
+            
+            <button class="menu-toggle" aria-label="Abrir Menú de Navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
     </header>
+
 
     <main>
         <section id="quienes-somos" class="section-padding bg-light">
@@ -157,32 +214,26 @@
                 
                 <div class="team-grid">
                     <div class="team-member" data-aos="fade-up">
-                        <img src="" alt="Contratista Eléctrico">
                         <h3>Contratista Eléctrico</h3>
                         <p>Responsable del mantenimiento y las mejoras en el área eléctrica.</p>
                     </div>
                     <div class="team-member" data-aos="fade-up" data-aos-delay="100">
-                        <img src="" alt="Contratista de Construcción">
                         <h3>Contratista de Construcción</h3>
                         <p>A cargo de obras civiles, mejoras estructurales y mantenimiento general.</p>
                     </div>
                     <div class="team-member" data-aos="fade-up" data-aos-delay="200">
-                        <img src="" alt="Contratista de Refrigeración">
                         <h3>Contratista de Refrigeración</h3>
                         <p>Encargado del mantenimiento y optimización del sistema de refrigeración.</p>
                     </div>
                     <div class="team-member" data-aos="fade-up" data-aos-delay="300">
-                        <img src="" alt="Contratista de Refrigeración">
                         <h3>Contratista de Sistema de Gestión</h3>
                         <p>Nos asesora en la implementación de procesos bajo un esquema de mejora continua.</p>
                     </div>
                     <div class="team-member" data-aos="fade-up" data-aos-delay="400">
-                        <img src="" alt="Contratista de Refrigeración">
                         <h3>Contratista de Seguridad, Higiene y Medio Ambiente</h3>
                         <p>Garantiza el cumplimiento de normativas en seguridad y sostenibilidad.</p>
                     </div>
                     <div class="team-member" data-aos="fade-up" data-aos-delay="500">
-                        <img src="" alt="Contratista de Refrigeración">
                         <h3>Contratista de Sistema Informático</h3>
                         <p>Gestiona y optimiza nuestras plataformas y sistemas tecnológicos.</p>
                     </div>
@@ -235,9 +286,10 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true });
     </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
