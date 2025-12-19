@@ -24,7 +24,7 @@
                     </div>
 
                     <div class="job-form-container">
-                        <form name="postulaciones" method="POST" data-netlify="true" enctype="multipart/form-data">
+                        <form name="postulaciones" method="POST" data-netlify="true" enctype="multipart/form-data" action="/gracias">
                             
                             <input type="hidden" name="form-name" value="postulaciones" />
 
@@ -47,7 +47,7 @@
                             <div class="form-group">
                                 <label>Adjuntá tu CV (PDF o Word)</label>
                                 <div class="file-upload-wrapper">
-                                    <input type="file" name="cv_file" accept=".pdf,.doc,.docx" required onchange="updateFileName(this)">
+                                    <input type="file" name="cv_archivo" accept=".pdf,.doc,.docx" required onchange="updateFileName(this)">
                                     <div class="file-custom-design">
                                         <i class="fas fa-cloud-upload-alt"></i>
                                         <span id="file-name-text">Seleccionar archivo</span>
@@ -65,14 +65,16 @@
     </main>
 
     <script>
-        // Solo dejamos la función para que se vea el nombre del archivo al seleccionarlo
+        // Esta función SOLO cambia el texto visualmente al elegir el archivo
         function updateFileName(input) {
             const fileName = input.files[0] ? input.files[0].name : "Seleccionar archivo";
             document.getElementById('file-name-text').innerText = fileName;
         }
-        
-        // NO AGREGUES MÁS SCRIPTS DE ENVÍO (FETCH O AJAX)
-        // Deja que el navegador haga el envío natural para que Netlify capture el CV.
+
+        /* IMPORTANTE: He eliminado el script de "fetch" o "submit event".
+           Dejar que el formulario se envíe de forma NATURALEZA garantiza 
+           que Netlify reciba el archivo binario correctamente.
+        */
     </script>
 </body>
 </html>
