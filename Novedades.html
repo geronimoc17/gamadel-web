@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamadel S.A. | Logística Global para el Agro</title>
+    <link rel="icon" href="assets/img/LOGO_CIRCULAR.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* RESET GENERAL */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { 
+            width: 100%; 
+            height: 100%; 
+            overflow: hidden; 
+            background-color: #000; 
+            font-family: 'Arial', sans-serif;
+        }
+
+        .expansion-section-full {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+        }
+
+        .expansion-video-full {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%; 
+            min-height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            filter: brightness(0.6);
+        }
+
+        .expansion-overlay-full {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, transparent 100%);
+            z-index: 2;
+        }
+
+        /* CONTENIDO WEB */
+        .expansion-content-full {
+            position: absolute;
+            top: 50%;
+            left: 8%;
+            transform: translateY(-50%);
+            color: #fff;
+            z-index: 10;
+            width: 80%; 
+        }
+
+        .badge {
+            background: #DF4124;
+            padding: 6px 15px;
+            border-radius: 4px;
+            font-size: 0.75rem; /* Un poco más chico */
+            font-weight: 800;
+            letter-spacing: 2px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .reveal-text {
+            font-size: 6vw; /* Bajamos de 7vw a 6vw para dar aire en Web */
+            font-weight: 900;
+            line-height: 1;
+            margin: 0;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .sub-reveal {
+            font-size: 2vw; /* Bajamos de 2.5vw a 2vw */
+            font-weight: 300;
+            color: #DF4124;
+            margin: 8px 0 20px 0;
+            text-transform: uppercase;
+        }
+
+        .expansion-line {
+            width: 70px;
+            height: 4px;
+            background: #DF4124;
+            margin-bottom: 25px;
+        }
+
+        .expansion-content-full p {
+            font-size: 1.1rem;
+            max-width: 450px;
+            margin-bottom: 30px;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .btn-preventa {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1rem;
+            animation: pulse-ws 2s infinite;
+        }
+
+        @keyframes pulse-ws {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* AJUSTE PARA MÓVILES */
+        @media (max-width: 768px) {
+            .expansion-content-full {
+                left: 0;
+                width: 100%;
+                padding: 0 30px; /* Más padding lateral */
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .reveal-text {
+                /* Bajamos de 10.5vw a 9vw para que sobre espacio en los bordes del celular */
+                font-size: 9vw; 
+                white-space: normal;
+                word-wrap: break-word;
+            }
+
+            .sub-reveal {
+                font-size: 1.2rem;
+                margin: 5px 0 15px 0;
+            }
+
+            .expansion-line {
+                margin: 0 auto 15px;
+                width: 50px;
+            }
+
+            .expansion-content-full p {
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="expansion-section-full">
+        <video autoplay muted loop playsinline preload="auto" poster="assets/video/NuevosDepositos1erframe.png" class="expansion-video-full" id="videoExpansion">
+            <source src="assets/video/DepositosNuevos.mp4" type="video/mp4">
+        </video>
+        
+        <div class="expansion-overlay-full"></div>
+
+        <div class="expansion-content-full">
+            <span class="badge">PROYECTO 2026</span>
+            <h1 class="reveal-text">PRÓXIMAMENTE</h1>
+            <h2 class="sub-reveal">NUEVOS DEPÓSITOS</h2>
+            <div class="expansion-line"></div>
+            <p>Estamos construyendo el futuro de la logística agroindustrial. Capacidad estratégica y tecnología de punta.</p>
+            
+            <a href="https://wa.me/2475410435" class="btn-preventa" target="_blank">
+                <i class="fab fa-whatsapp"></i> CONTÁCTANOS
+            </a>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const v = document.getElementById('videoExpansion');
+            if(v) v.playbackRate = 0.6;
+        });
+    </script>
+    
+</body>
+</html>

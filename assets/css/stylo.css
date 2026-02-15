@@ -1,0 +1,136 @@
+/* RESET ESPECÍFICO PARA ELIMINAR FRANJAS BLANCAS */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden;
+}
+
+/* CONTENEDOR DE BORDE A BORDE (FULL SCREEN) */
+.expansion-section-full {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* VIDEO DE FONDO INMERSIVO */
+.expansion-video-full {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%); /* Centrado perfecto del video */
+    object-fit: cover; /* Evita que el video se vea estirado o cortado mal */
+    z-index: 1;
+    filter: brightness(0.2); /* Oscurece el video para leer bien el texto */
+}
+
+/* CAPA DE SOMBRA LATERAL (GRADIENTE) */
+.expansion-overlay-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* CONTENIDO DEL TEXTO */
+.expansion-content-full {
+    position: relative;
+    z-index: 10;
+    padding-left: 8%;
+    color: #ffffff;
+    max-width: 900px;
+}
+
+.badge {
+    background: #FF8C00; /* Naranja Gamadel */
+    padding: 6px 15px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.reveal-text {
+    font-size: clamp(2.5rem, 9vw, 6rem); /* Tamaño gigante que se adapta a móviles */
+    font-weight: 900;
+    margin: 15px 0 0;
+    line-height: 0.9;
+    letter-spacing: -3px;
+}
+
+.sub-reveal {
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
+    font-weight: 300;
+    color: #FF8C00;
+    margin: 10px 0 25px 0;
+    text-transform: uppercase;
+}
+
+.expansion-line {
+    width: 80px;
+    height: 5px;
+    background: #FF8C00;
+    margin-bottom: 25px;
+}
+
+.expansion-content-full p {
+    font-size: 1.15rem;
+    max-width: 480px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* BOTÓN WHATSAPP CON EFECTO DE PULSO */
+.btn-preventa {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #25D366; /* Verde Oficial WhatsApp */
+    color: white;
+    padding: 18px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+    animation: pulse-ws 2s infinite;
+}
+
+.btn-preventa:hover {
+    background-color: #1ebe57;
+    transform: scale(1.05) translateY(-3px);
+}
+
+@keyframes pulse-ws {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* AJUSTES PARA CELULARES */
+@media (max-width: 768px) {
+    .expansion-content-full {
+        padding: 0 20px;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .expansion-line { margin: 0 auto 25px; }
+}

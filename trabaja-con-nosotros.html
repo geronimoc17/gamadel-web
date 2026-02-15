@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamadel S.A. | Logística Global para el Agro</title>
+    <link rel="icon" href="assets/img/LOGO_CIRCULAR.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    
+    <a href="https://wa.me/2475410435" target="_blank" class="whatsapp-btn" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <header id="main-header">
+        <div class="container">
+            <div class="logo-wrapper"> 
+                <a href="index.html" class="logo"> 
+                    <img src="assets/img/logo.jpeg" alt="Gamadel S.A. Logo">
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" >Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li> 
+                    <li><a href="depositos.html">Depósitos</a></li>
+                    <li><a href="tecnologias.html" class="active">Tecnologías</a></li>
+                    <li><a href="sustentabilidad.html">Sustentabilidad</a></li>
+                    <li><a href="index.html#contact-form">Contacto</a></li> 
+                    <li><a href="Novedades.html">Novedades</a></li>
+                    <li><a href="trabaja-con-nosotros.html" class="btn btn-primary" style="color: white">Trabajá con Nosotros</a></li>
+                </ul>
+            </nav>
+            
+            <button class="menu-toggle" aria-label="Abrir Menú de Navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="job-page section-padding">
+            <div class="container">
+                <div class="job-application-wrapper">
+                    
+                    <div class="job-info-new">
+                        <h2>Unite a nuestro equipo</h2>
+                        <p>En <strong>Gamadel</strong>, buscamos personas apasionadas que quieran crecer con nosotros.</p>
+                        <ul class="benefits-list">
+                            <li><i class="fas fa-check-circle"></i> Crecimiento profesional</li>
+                            <li><i class="fas fa-check-circle"></i> Excelente clima laboral</li>
+                        </ul>
+                    </div>
+
+                    <div class="job-form-container">
+                        <form name="nueva_postulacion" method="POST" data-netlify="true" enctype="multipart/form-data">
+                            
+                            <input type="hidden" name="form-name" value="nueva_postulacion" />
+
+                            <div class="form-group">
+                                <label>Nombre y Apellido</label>
+                                <input type="text" name="nombre" required>
+                            </div>
+
+                            <div class="form-group-row">
+                                <div class="form-group">
+                                    <label>Celular</label>
+                                    <input type="tel" name="celular" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input type="email" name="email" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Adjuntá tu CV</label>
+                                <div class="file-upload-wrapper">
+                                    <input type="file" name="archivo_cv" accept=".pdf,.doc,.docx" required onchange="updateFileName(this)">
+                                    <div class="file-custom-design">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <span id="file-name-text">Seleccionar archivo</span>
+                                    </div>
+                                    <br>
+                                </div>
+                                <br>
+                            </div>
+
+                            <button type="submit" class="btn-primary full-width">Enviar postulación</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function updateFileName(input) {
+            const fileName = input.files[0] ? input.files[0].name : "Seleccionar archivo";
+            document.getElementById('file-name-text').innerText = fileName;
+        }
+        // HEMOS ELIMINADO TODO EL SCRIPT DE ENVÍO PARA QUE NO HAYA ERRORES
+    </script>
+    <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+
+    menuToggle.addEventListener('click', () => {
+        // Esto le pone o le quita la clase 'active' al menú al tocar el botón
+        mainNav.classList.toggle('active');
+    });
+
+    // Opcional: Cierra el menú cuando tocas un link
+    document.querySelectorAll('.main-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            mainNav.classList.remove('active');
+        });
+    });
+</script>
+</body>
+</html>
