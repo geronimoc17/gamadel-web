@@ -1,148 +1,155 @@
-        /* RESET GENERAL */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { 
-            width: 100%; 
-            height: 100%; 
-            overflow: hidden; 
-            background-color: #000; 
-            font-family: 'Arial', sans-serif;
-        }
+/* RESET GENERAL */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
-        .expansion-section-full {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 1;
-        }
+html, body { 
+    width: 100%; 
+    height: 100%; 
+    overflow-x: hidden; /* Evita scroll horizontal innecesario */
+    background-color: #000; 
+    font-family: 'Arial', sans-serif;
+}
 
-        .expansion-video-full {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            min-width: 100%; 
-            min-height: 100%;
-            object-fit: cover;
-            z-index: 1;
-            filter: brightness(0.5);
-        }
+/* SECCIÓN CONTENEDORA */
+.expansion-section-full {
+    position: relative; /* Cambiado de fixed a relative si es parte de un scroll, o mantené fixed si es splash */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+}
 
-        .expansion-overlay-full {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, transparent 100%);
-            z-index: 2;
-        }
+/* VIDEO OPTIMIZADO */
+.expansion-video-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Centra y cubre el área automáticamente sin transform */
+    z-index: 1;
+    background-color: #000; /* Fondo negro mientras carga */ /* Si podés oscurecer el video original, borrá esta línea */
+    will-change: transform; /* Ayuda al navegador a preparar la aceleración de hardware */
+}
 
-        /* CONTENIDO WEB */
-        .expansion-content-full {
-            position: absolute;
-            top: 50%;
-            left: 8%;
-            transform: translateY(-50%);
-            color: #fff;
-            z-index: 10;
-            width: 80%; 
-        }
+/* OVERLAY DE GRADIENTE */
+.expansion-overlay-full {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.8) 0%, transparent 100%);
+    z-index: 2;
+    pointer-events: none; /* Permite hacer clic a través del overlay si hace falta */
+}
 
-        .badge {
-            background: #DF4124;
-            padding: 6px 15px;
-            border-radius: 4px;
-            font-size: 0.75rem; /* Un poco más chico */
-            font-weight: 800;
-            letter-spacing: 2px;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
+/* CONTENIDO WEB */
+.expansion-content-full {
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
+    color: #fff;
+    z-index: 10;
+    width: 80%; 
+}
 
-        .reveal-text {
-            font-size: 6vw; /* Bajamos de 7vw a 6vw para dar aire en Web */
-            font-weight: 900;
-            line-height: 1;
-            margin: 0;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
+.badge {
+    background: #DF4124;
+    padding: 6px 15px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    display: inline-block;
+    margin-bottom: 15px;
+}
 
-        .sub-reveal {
-            font-size: 2vw; /* Bajamos de 2.5vw a 2vw */
-            font-weight: 300;
-            color: #DF4124;
-            margin: 8px 0 20px 0;
-            text-transform: uppercase;
-        }
+.reveal-text {
+    font-size: 6vw; 
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0;
+    text-transform: uppercase;
+}
 
-        .expansion-line {
-            width: 70px;
-            height: 4px;
-            background: #DF4124;
-            margin-bottom: 25px;
-        }
+.sub-reveal {
+    font-size: 2vw;
+    font-weight: 300;
+    color: #DF4124;
+    margin: 8px 0 20px 0;
+    text-transform: uppercase;
+}
 
-        .expansion-content-full p {
-            font-size: 1.1rem;
-            max-width: 450px;
-            margin-bottom: 30px;
-            color: rgba(255,255,255,0.9);
-        }
+.expansion-line {
+    width: 70px;
+    height: 4px;
+    background: #DF4124;
+    margin-bottom: 25px;
+}
 
-        .btn-preventa {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background-color: #25D366;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1rem;
-            animation: pulse-ws 2s infinite;
-        }
+.expansion-content-full p {
+    font-size: 1.1rem;
+    max-width: 450px;
+    margin-bottom: 30px;
+    color: rgba(255,255,255,0.9);
+}
 
-        @keyframes pulse-ws {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-        }
+/* BOTÓN WHATSAPP OPTIMIZADO */
+.btn-preventa {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #25D366;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1rem;
+    /* Usamos scale en vez de box-shadow para mejor rendimiento en móviles */
+    animation: pulse-soft 2s infinite ease-in-out;
+}
 
-        /* AJUSTE PARA MÓVILES */
-        @media (max-width: 768px) {
-            .expansion-content-full {
-                left: 0;
-                width: 100%;
-                padding: 0 30px; /* Más padding lateral */
-                text-align: center;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
+@keyframes pulse-soft {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
+    100% { transform: scale(1); }
+}
 
-            .reveal-text {
-                /* Bajamos de 10.5vw a 9vw para que sobre espacio en los bordes del celular */
-                font-size: 9vw; 
-                white-space: normal;
-                word-wrap: break-word;
-            }
+/* AJUSTE PARA MÓVILES */
+@media (max-width: 768px) {
+    .expansion-content-full {
+        left: 0;
+        width: 100%;
+        padding: 0 20px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-            .sub-reveal {
-                font-size: 1.2rem;
-                margin: 5px 0 15px 0;
-            }
+    .reveal-text {
+        font-size: 10vw; /* Ajustado para legibilidad */
+        white-space: normal;
+        word-wrap: break-word;
+    }
 
-            .expansion-line {
-                margin: 0 auto 15px;
-                width: 50px;
-            }
+    .sub-reveal {
+        font-size: 1.1rem;
+        margin: 5px 0 15px 0;
+    }
 
-            .expansion-content-full p {
-                font-size: 0.9rem;
-                margin-bottom: 20px;
-            }
-        }
+    .expansion-line {
+        margin: 0 auto 15px;
+    }
+
+    .expansion-content-full p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+}
